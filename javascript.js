@@ -101,4 +101,17 @@ class HashMap {
     return keysArray;
   }
 
+
+   values() {
+    const valuesArray = [];
+
+    for (let bucket of this.buckets) {
+      for (let pair of bucket) {
+        valuesArray.push(pair[1]);
+      }
+    }
+
+    return valuesArray;
+  }
+
 }
