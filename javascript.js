@@ -43,4 +43,20 @@ class HashMap {
       this.resize();
     }
   }
+
+  get(key) {
+    const index = this.hash(key);
+    this.checkIndex(index);
+
+    const bucket = this.buckets[index];
+
+    for (let pair of bucket) {
+      if (pair[0] === key) {
+        return pair[1];
+      }
+    }
+
+    return null;
+  }
+
 }
