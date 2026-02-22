@@ -21,4 +21,26 @@ class HashMap {
     if (index < 0 || index >= this.buckets.length) {
       throw new Error("Trying to access index out of bounds");
     }
-}}
+}
+
+ set(key, value) {
+    const index = this.hash(key);
+    this.checkIndex(index);
+
+    const bucket = this.buckets[index];
+
+    for (let pair of bucket) {
+      if (pair[0] === key) {
+        pair[1] = value; // overwrite
+        return;
+      }
+    }
+
+    bucket.push([key, value]);
+    this.size++;
+
+    if (this.size / this.capacity > this.loadFactor) {
+      this.resize();
+    }
+  }
+}
