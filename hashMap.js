@@ -127,3 +127,17 @@ class HashMap {
     }
   }
 }
+
+class HashSet extends HashMap {
+  set(key) {
+    super.set(key, true);
+  }
+
+  add(key) {
+    this.set(key);
+  }
+
+  values() {
+    return this.keys();
+  }
+}
