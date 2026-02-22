@@ -14,3 +14,8 @@ test.set('kite', 'pink')
 test.set('lion', 'golden')
 
 console.log(test.length())
+
+test.set('apple', 'dark red')
+test.set('banana', 'light yellow')
+
+console.log(test.length())
