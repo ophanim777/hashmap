@@ -114,4 +114,16 @@ class HashMap {
     return valuesArray;
   }
 
+   resize() {
+    const oldBuckets = this.buckets;
+    this.capacity *= 2;
+    this.buckets = new Array(this.capacity).fill(null).map(() => []);
+    this.size = 0;
+
+    for (let bucket of oldBuckets) {
+      for (let pair of bucket) {
+        this.set(pair[0], pair[1]);
+      }
+    }
+  }
 }
