@@ -19,3 +19,14 @@ test.set('apple', 'dark red')
 test.set('banana', 'light yellow')
 
 console.log(test.length())
+
+console.log(test.get('apple'))  
+console.log(test.has('lion')) 
+console.log(test.remove('lion'))
+console.log(test.length())       
+console.log(test.keys())
+console.log(test.values())
+console.log(test.entries())
+
+test.clear()
+console.log(test.length()) 
