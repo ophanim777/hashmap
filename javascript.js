@@ -88,4 +88,17 @@ class HashMap {
     this.buckets = new Array(this.capacity).fill(null).map(() => []);
     this.size = 0;
   }
+
+   keys() {
+    const keysArray = [];
+
+    for (let bucket of this.buckets) {
+      for (let pair of bucket) {
+        keysArray.push(pair[0]);
+      }
+    }
+
+    return keysArray;
+  }
+
 }
